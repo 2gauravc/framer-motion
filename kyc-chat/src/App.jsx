@@ -109,7 +109,10 @@ export default function App() {
   const toggleHelp = useCallback(() => {
     lastHelp.current = null
     setHelpOn(!helpOn)
-    if (!helpOn) botSay('Field help is on. Click into any field and I\'ll explain it.', 400)
+    botSay(
+      helpOn ? 'Field help is off.' : 'Field help is on. Click into any field and I\'ll explain it.',
+      400
+    )
   }, [botSay, helpOn])
 
   const handleSubmit = useCallback(async () => {
